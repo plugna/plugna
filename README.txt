@@ -3,7 +3,7 @@ Contributors: plugna
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=agca@cusmin.com&amount=10&item_name=Support+for+Plugna+Development
 Tags: plugins, admin, wp-admin, manager, management, plugin manager
 Requires at least: 6.0
-Tested up to: 6.0
+Tested up to: 6.1
 Stable tag: 1.0
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -19,10 +19,10 @@ You can switch back to the original plugins page whenever you need it.
 
 * **USER-FRIENDLY**: interface
 * **AJAX-POWERED**: for fast and seamless management
-* **FILTERING***: filter plugins by various criteria, statuses, keywords, activated, deactivated, having updates, etc.
+* **FILTERING**: filter plugins by various criteria, statuses, keywords, activated, deactivated, having updates, etc.
 * **BULK ACTIONS**: select and toggle multiple plugins' state at once (active -> inactive and inactive -> active)
 * **LESS SCROLLING**: See more plugins on the page without scrolling
-* **SUPPORTED ACTIONS***: activate, deactivate, delete, update, install, auto-update flag etc.
+* **SUPPORTED ACTIONS**: activate, deactivate, delete, update, install, auto-update flag etc.
 * **PLUGIN BRANDING**: for a cohesive user experience
 
 = FEATURES =
@@ -58,8 +58,8 @@ We would like to thank the WordPress community and its contributors for their in
 
 == Frequently Asked Questions ==
 
-= Are there any plans to support multi-sites? =
-NO. Multi-site support is not yet available, but we are working on it.
+= Are multi-sites supported? =
+Not yet. Multi-site support is not yet available, but we are working on it.
 
 == Screenshots ==
 
