@@ -7,6 +7,7 @@ mkdir "export"
 rsync -av \
 --exclude=README.md \
 --exclude=.gitignore \
+--exclude=export \
 --exclude=.git \
 --exclude=main.js \
 --exclude=yarn.lock \
