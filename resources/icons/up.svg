@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 507.68" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="nonzero" transform="rotate(180 256 253)" fill="#2376aa" d="M 227.15 358.18 L 285.01 358.18 C 296.45 358.18 305.83 348.8 305.83 337.36 L 305.83 263.49 L 346.53 263.49 C 353.46 263.19 358.39 260.89 361.23 256.57 C 368.95 245 358.42 233.57 351.11 225.52 C 330.37 202.76 279.55 148.07 269.32 136.03 C 261.56 127.45 250.52 127.45 242.76 136.03 C 232.19 148.37 178.82 205.56 159.1 227.7 C 152.26 235.4 143.81 245.91 150.93 256.57 C 153.84 260.89 158.71 263.19 165.65 263.49 L 206.33 263.49 L 206.33 337.36 C 206.33 348.8 215.7 358.18 227.15 358.18 Z"/>
+</svg>

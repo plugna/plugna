@@ -1,0 +1,26 @@
+#content-plugna {
+    .plugin-item {
+      .version {
+        font-size: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        span, img{
+          padding-right: 5px;
+          &.update{
+            color: #00c791;
+          }
+        }
+        .icon {
+          width: 10px;
+          height: 10px;
+          margin: 0;
+          transform: scale(2.2) translateX(2.5px);
+          filter: hue-rotate(-58deg) brightness(1.5);
+        }
+      }
+    }
+}

@@ -1,0 +1,118 @@
+#content-plugna {
+  .plugna-popup,
+  .plugna-notification{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+    transition: all .3s ease-in-out;
+
+    .plugna-image {
+      max-width: 100%;
+     img {
+       max-width: 100%;
+       box-shadow: 2px 2px 2px #aaa;
+       border-radius: 6px;
+       border: 1px solid #aaa;
+     }
+    }
+
+.yt-video{
+  padding-top:20px;
+  iframe {
+    width: 100%;
+    height:auto;
+    aspect-ratio: 16/9;
+  }
+}
+
+    &:not(.visible) {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      > .wrapper {
+        pointer-events: none;
+        .inner {
+          pointer-events: none;
+        }
+      }
+    }
+    > .bg {
+      background: var(--plugna-color-3);
+      opacity: .2;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    > .wrapper {
+      pointer-events: none;
+      min-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .inner {
+        pointer-events: auto;
+        width: 800px;
+        min-height: 300px;
+        background: white;
+        border-radius: 10px;
+        padding: 35px;
+        box-shadow: 2px 3px 8px #555;
+        > .content {
+          overflow-y: auto;
+          max-height: 70vH;
+          width: 100%;
+          padding-right: 20px;
+          .plugna-image {
+            max-width: 80%;
+          }
+        }
+         > h2 {
+           color: var(--plugna-green-dark);
+           font-weight: bold;
+           font-size: 20px;
+         }
+
+        .exit {
+          float: right;
+          background: var(--plugna-red-dark);
+          transform: scale(0.7);
+          border: none;
+          &:hover {
+            background: var(--plugna-red);
+          }
+        }
+      }
+    }
+
+    &.popup-vip {
+      h2{
+        text-align: center;
+      }
+      .wrapper {
+        .inner::before {
+          content: " ";
+          pointer-events: none;
+          background: url(../resources/icons/vip.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 500px;
+          height: 100%;
+          display: block;
+          position: absolute;
+          opacity: 0.05;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+#content-plugna {
+    .plugins-list.main-list{
+      .plugin-item {
+        .info {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+      }
+    }
+    .plugin-item {
+      .badges {
+        font-size: 10px;
+        position: absolute;
+        top: 0;
+        margin-right: 10px;
+        margin-top: 10px;
+
+        ul{
+          list-style-type: none;
+          display: flex;
+          margin: 0;
+          li {
+            display: flex;
+            align-items: center;
+            padding-left: 3px;
+
+            &.update {
+              font-size: 22px;
+              color: var(--plugna-green-light);
+              border-radius: 100%;
+              width: 16px;
+              height: 18px;
+            }
+
+            &.info{
+              .dashicons {
+                font-size: 18px;
+              }
+            }
+
+            &.au {
+              font-weight: bold;
+              padding: 3px;
+              border: none;
+              font-size: 12px;
+              height: 13px;
+              display: inline-flex;
+              background: transparent;
+              span {
+                color: var(--plugna-red);
+              }
+              &.enabled {
+                span {
+                  color: var(--plugna-green-light);
+                }
+              }
+              .dashicons-before {
+                display: none;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+    }
+}

@@ -1,0 +1,295 @@
+body:not(.plugna-upload){
+  .plugna-upload{
+    display: none;
+  }
+}
+body.plugna-add-new{
+  .actions-wrap{
+    .actions {
+      .left, .row-name {
+        opacity: 0;
+      }
+    }
+  }
+}
+.plugna-upload.upload-plugin-wrap {
+  position: absolute;
+  top: 210px;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+  .upload-plugin {
+    display: block;
+  }
+}
+#content-plugna {
+  .add-new-plugin {
+    display: none;
+    z-index: 2;
+    background: #f6f7f7;
+    position: relative;
+    margin-top: -57px;
+    min-height: calc(100vH - 85px);
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px;
+    padding-top: 10px;
+    width: calc(100% - 22px);
+
+    .results-for {
+      margin-left: 10px;
+      font-style: italic;
+      position: absolute;
+      margin-top: -11px;
+      max-width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .zero-results {
+      text-align: center;
+      width: 100%;
+      display: block;
+      font-size: 21px;
+      font-style: italic;
+      padding-top: 65px;
+      color: #777;
+    }
+    .searching {
+      min-height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+      &.no-loader {
+        .spinner {
+          background-image: none;
+        }
+      }
+      &.paginating {
+        padding: 30px 0;
+        padding-bottom: 10px;
+      }
+      .spinner{
+        text-align: center;
+        min-width: 172px;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 21px;
+        color: #777;
+        visibility: visible;
+      }
+    }
+
+    .plugins-list{
+      margin-top: 20px;
+      grid-template-columns: 1fr 1fr 1fr;
+      display: grid;
+      grid-gap: 10px;
+    }
+
+    .plugin-item {
+      width: 100%;
+      background: #fff;
+      box-shadow: 1px 1px 11px #ccc;
+      .content {
+        position: relative;
+        .message-box{
+          width: 100%;
+          color: green;
+          display: none;
+          position: absolute;
+          z-index: 2;
+          background: white;
+          border: 2px solid;
+          .wrap {
+            margin: 0;
+            padding: 0;
+          }
+          .exit {
+            float: right;
+            scale: 0.6;
+          }
+          h1 {
+            display: none !important;
+          }
+          a{
+            display: none !important;
+          }
+          span.code {
+            display: block;
+          }
+          p{
+            word-break: break-all;
+            font-size: 11px;
+            margin: 4px;
+          }
+          &.error, &.success {
+            display: block;
+          }
+          &.error {
+            color: red;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        h2 {
+          width: 100%;
+          text-align: center;
+          background: var(--plugna-color-1);
+          opacity: .7;
+          line-height: 1.5em;
+          color: #fff;
+          padding: 12px 2px;
+        }
+
+        flex-direction: column;
+        .image {
+          width: 128px;
+          height: 128px;
+        }
+        .top-section {
+          display: flex;
+          justify-content: space-between;
+          align-items: stretch;
+          width: 100%;
+          padding-bottom: 20px;
+          .info {
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            .actions {
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              .done {
+                width: 100%;
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                font-weight: bold;
+                color: #1cca1c;
+              }
+            }
+            p {
+              margin-top: 0;
+              flex: 1;
+            }
+            .plugna-button:not(.more-info) {
+              width: 100%;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    &.visible {
+        pointer-events: initial;
+        opacity: 1;
+        display: block;
+    }
+
+    .wrapper {
+      .inner {
+        .top-bar {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          h2 {
+            padding: 0;
+            position: absolute;
+            margin-top: -37px;
+            font-size: 22px;
+            margin-left: 0;
+          }
+          .search-box{
+            flex: 1;
+            position: relative;
+            .clear-input{
+              max-width: 43px;
+              position: absolute;
+              text-align: right;
+              top: 0;
+              right: 0;
+              margin-top: 3px;
+              button{
+                min-width: 36px;
+                margin-right: 1px;
+              }
+            }
+            input {
+              width: 100%;
+              height: 100%;
+              padding-left: 15px;
+              border: 2px solid var(--plugna-color-2);
+              flex: 1;
+              &::placeholder {
+                color: var(--plugna-color-2);
+              }
+            }
+          }
+
+          button {
+            margin-left: 4px;
+            min-width: 99px;
+          }
+        }
+        .message-actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            margin: 5px;
+          }
+        }
+        .upload-status {
+          text-align: center;
+          font-size: 20px;
+          padding-top: 60px;
+          padding-bottom: 60px;
+          font-style: italic;
+          &.upload-error {
+            color: #e66969;
+          }
+          &.success-message {
+            color: #4caf50;
+            font-weight: bold;
+          }
+          &.upload-error-details {
+            .update-from-upload-heading {
+              font-size: 25px;
+              margin: 20px;
+            }
+            p.hidden {
+              display: none !important;
+            }
+            .update-from-upload-notice,
+            .update-from-upload-expired {
+              font-size: 14px;
+            }
+            .update-from-upload-actions {
+              display: none !important;
+            }
+            table {
+              max-width: 600px;
+              margin: auto !important;
+              margin-bottom: 10px !important;
+            }
+            h1, p, h2, table{
+              margin: 2px;
+              font-size: initial;
+              text-align: center;
+              display: block !important;
+              &:after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

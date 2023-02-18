@@ -1,0 +1,203 @@
+:root{
+  --plugna-green-dark: #184e38;
+  --plugna-green-dark-secondary: #4a5c55;
+  --plugna-red: #F44336;
+  --plugna-red-dark: #c41c10;
+  --plugna-warning: #d2a412;
+  --plugna-green: #366350;
+  --plugna-green-light: #00A912;
+  --plugna-green-grey: #57806e;
+}
+body.toplevel_page_plugna #wpbody-content .notice,
+body.toplevel_page_plugna #wpbody-content .updated,
+body.toplevel_page_plugna #wpbody-content .error{
+    display: none;
+}
+body.wp-admin.toplevel_page_plugna {
+  .main-loader {
+    display: flex;
+    margin: 20px 0;
+    font-size: 15px;
+    .loader{
+      margin-left: 3px;
+    }
+  }
+  .circle-progress {
+    display: flex;
+    border-radius: 50%;
+    font-size: 0;
+    width: 65px;
+    height: 65px;
+
+    &::after {
+      content: attr(data-progress) '%';
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      margin: 4px;
+      border-radius: 50%;
+      background: white;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  #content-plugna{
+    .clear-input{
+      position: absolute;
+      width: 100%;
+      text-align: right;
+      button{
+        background: red;
+        max-width: 10px;
+        min-width: 10px;
+        margin-right: 4px;
+        transform: scale(0.8);
+      }
+    }
+    .plugna-button {
+      transition: all .3s ease-in-out;
+      font-weight: bold;
+      display: inline-flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: none !important;
+      color: #fff;
+      padding: 4px 17px;
+      > span {
+        display: flex;
+        color: #fff;
+      }
+
+      &.secondary {
+        padding: 1px 12px;
+        color: #fff;
+        font-size: 12px;
+        min-width: auto;
+
+        &.wired {
+          background: #fff;
+          border: 1px solid var(--plugna-color-3) !important;
+          color: var(--plugna-color-3);
+
+          &:hover{
+            opacity: .7;
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    display: flex !important;
+    flex-direction: row-reverse;
+    justify-content: left;
+    align-items: center;
+    a {
+      margin: 0;
+      margin-top: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .dashicons {
+        margin-right: 5px;
+      }
+    }
+    > span{
+      display: none;
+    }
+    &::after {
+      content: ' ';
+      display: block;
+      width: 200px;
+      height: 57px;
+      background: url('../resources/icons/plugna-logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  .box-colors {
+    display: none;
+    .color-box {
+      width: 50px;
+      height: 10px;
+    }
+  }
+  .wrap {
+     > .notice, > .error, > div:not(.plugna-upload) {
+       display: none;
+     }
+  }
+
+  #wpcontent, #wpwrap{
+    background: #fff;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  .top-actions {
+    position: absolute;
+    right: 21px;
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+
+    #become-vip-button{
+      img {
+        width: 12px;
+        height: auto;
+        filter: brightness(10);
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        margin: 0;
+      }
+    }
+    button {
+      margin-left: 5px;
+      padding: 2px 30px;
+      font-weight: bold;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > span, > img{
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
+  }
+  h1 {
+    display: inline-block;
+  }
+
+  #content-plugna {
+    display: block;
+    .button-primary{
+      &.red {
+        background: var(--plugna-red-dark);
+        &:hover {
+          background: var(--plugna-red);
+        }
+      }
+    }
+    .loader {
+      transform: scaleX(-1);
+    }
+  }
+}

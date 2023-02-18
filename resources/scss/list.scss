@@ -1,0 +1,24 @@
+#content-plugna {
+  .plugins-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+    margin-top: -5px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 540px) {
+      grid-template-columns: 1fr;
+    }
+    &.hidden {
+      display: none;
+    }
+    .no-plugins-matched{
+      text-align: center;
+      min-width: 100%;
+      grid-column: 1/4;
+      font-style: italic;
+    }
+  }
+}

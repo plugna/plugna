@@ -1,0 +1,19 @@
+#content-plugna {
+  .loader {
+    color: var(--plugna-color-1);
+  }
+  .plugin-item {
+    .loader {
+      opacity: 0;
+      margin-right: 5px;
+    }
+    &.loading {
+      .loader {
+        opacity: 1;
+      }
+      h2 {
+        opacity: 0.4;
+      }
+    }
+  }
+}
