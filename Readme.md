@@ -52,3 +52,6 @@ This command will remove all files from the export directory.
 ```shell
 yarn clean
 ```
+
+### Disclaimer
+Use at your own risk. This plugin is provided as-is, without any warranty or guarantee of its functionality or effectiveness. While we have made every effort to ensure that this plugin is safe and reliable, we cannot be held responsible for any damages or losses caused by its use. Please use this plugin at your own discretion and responsibility.
