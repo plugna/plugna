@@ -105,7 +105,19 @@ class Plugna
     public static function admin_page()
     {
         self::colors();
+
         $plugnaData = get_option('plugna');
+
+        if(empty($plugnaData)){
+            $plugnaData = json_encode((object) [
+                    'settings' =>[],
+                    'filters'  =>[
+                        "toggle" => "toggle-toggle"
+                    ],
+                    'actions'  =>[],
+            ]);
+            update_option('plugna', $plugnaData);
+        }
         ?>
         <script type="text/javascript">
             var plugna = JSON.parse('<?= $plugnaData ?: '{}'; ?>');
