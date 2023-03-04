@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugna API class, containing all the methods for fetching and managing plugins used in Plugna.
  */
-class Api
+class PlugnaApi
 {
     const CAN_ACTIVATE_PLUGINS = 'activate_plugins';
     const CAN_EDIT_PLUGINS = 'edit_plugins';
@@ -43,14 +43,14 @@ class Api
 
     public function __construct()
     {
-        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+        include_once ABSPATH . 'wp-admin/includes/plugin.php';
         require_once ABSPATH . 'wp-admin/includes/update.php';
         require_once ABSPATH . 'wp-admin/includes/misc.php';
-        include_once(ABSPATH . 'wp-admin/includes/class-wp-upgrader.php');
-        include_once(ABSPATH . 'wp-admin/includes/plugin-install.php');
-        include_once(ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php');
-        include_once plugin_dir_path(__FILE__) . 'data/Plugin.php';
-        include_once plugin_dir_path(__FILE__) . 'data/Plugins.php';
+        include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+        include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+        include_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
+        include_once plugin_dir_path(__FILE__) . 'data/PlugnaPlugin.php';
+        include_once plugin_dir_path(__FILE__) . 'data/PlugnaPlugins.php';
 
         add_action('rest_api_init', function () {
             $this->get_routes(self::$getRoutes);
@@ -125,6 +125,7 @@ class Api
      * @throws Exception
      */
     public function get_plugins(){
+
         require_once ABSPATH . 'wp-admin/includes/list-table.php';
         require_once ABSPATH . 'wp-admin/includes/template.php';
         require_once ABSPATH . 'wp-admin/includes/update.php';
@@ -139,7 +140,7 @@ class Api
         $wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
         $wp_list_table->prepare_items();
 
-        return (new Plugins($wp_list_table->items))->all();
+        return (new PlugnaPlugins($wp_list_table->items))->all();
     }
 
     /**
@@ -206,7 +207,7 @@ class Api
         $plugins = self::plugins_from_request($request);
 
         $resp = [];
-        /** @var Plugin $plugin */
+        /** @var PlugnaPlugin $plugin */
         foreach ($plugins as $plugin) {
             $resp[$plugin->id()] = $plugin->force_delete();
         }
@@ -448,7 +449,7 @@ class Api
 
         $this->suppressWarnings();
         $rawPluginData = json_decode($request->get_body());
-        return Plugin::fromRequest($rawPluginData);
+        return PlugnaPlugin::fromRequest($rawPluginData);
     }
 
     protected function plugin_from_slug($slug){
@@ -468,7 +469,7 @@ class Api
                 }
             }
         }catch (\Exception $e){
-            echo $e->getMessage();die;
+            echo wp_kses_post($e->getMessage());die;
         }
         return null;
     }
@@ -479,7 +480,7 @@ class Api
         $rawPluginsData = json_decode($request->get_body());
         $plugins = [];
         foreach ((array) $rawPluginsData as $rawPluginData){
-            $plugins[] = Plugin::fromRequest($rawPluginData);
+            $plugins[] = PlugnaPlugin::fromRequest($rawPluginData);
         }
         return $plugins;
     }
@@ -489,6 +490,7 @@ class Api
             'success' => true,
             'message' => $message
         ]);
+        exit;
     }
 
     protected function responseError($message, $code = ''){
@@ -500,7 +502,7 @@ class Api
     }
 
     protected function response($data){
-        wp_send_json_success(json_encode($data));
+        wp_send_json_success((json_encode($data)));
         exit;
     }
 

@@ -10,7 +10,7 @@
  * Plugin Name:       Plugna
  * Plugin URI:        https://plugna.com
  * Description:       Organize WordPress plugins like a PRO
- * Version:           1.0
+ * Version:           1.0.1
  * Author:            Plugna
  * Author URI:        https://plugna.com/
  * License:           GPL-2.0+

@@ -16,10 +16,10 @@ class Plugna
     {
         self::adminMenu();
 
-        require_once plugin_dir_path(__FILE__) . 'Api.php';
+        require_once plugin_dir_path(__FILE__) . 'PlugnaApi.php';
         require_once ABSPATH . 'wp-admin/includes/file.php';
 
-        $this->api = new Api;
+        $this->api = new PlugnaApi;
 
         add_action('admin_enqueue_scripts', array(&$this, 'enqueue'));
     }
@@ -57,7 +57,7 @@ class Plugna
             'activate_plugins',
             'plugna',
             'Plugna::admin_page',
-            plugins_url('/plugna/resources/icons/plugna-logo-small-white.svg'),
+            plugins_url('resources/icons/plugna-logo-small-white.svg',dirname(__FILE__) . '../'),
             65);
     }
 
@@ -89,13 +89,13 @@ class Plugna
         ?>
         <style>
             #content-plugna {
-                --plugna-color-1: <?= $_wp_admin_css_colors[$current_color]->colors[0]; ?>;
-                --plugna-color-2: <?= $_wp_admin_css_colors[$current_color]->colors[1]; ?>;
-                --plugna-color-3: <?= $_wp_admin_css_colors[$current_color]->colors[2]; ?>;
-                --plugna-color-4: <?= $_wp_admin_css_colors[$current_color]->colors[3]; ?>;
-                --plugna-color-icon-base: <?= $_wp_admin_css_colors[$current_color]->icon_colors['base']; ?>;
-                --plugna-color-icon-current: <?= $_wp_admin_css_colors[$current_color]->icon_colors['current']; ?>;
-                --plugna-color-icon-focus: <?= $_wp_admin_css_colors[$current_color]->icon_colors['focus']; ?>;
+                --plugna-color-1: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->colors[0]); ?>;
+                --plugna-color-2: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->colors[1]); ?>;
+                --plugna-color-3: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->colors[2]); ?>;
+                --plugna-color-4: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->colors[3]); ?>;
+                --plugna-color-icon-base: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->icon_colors['base']); ?>;
+                --plugna-color-icon-current: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->icon_colors['current']); ?>;
+                --plugna-color-icon-focus: <?php echo esc_attr($_wp_admin_css_colors[$current_color]->icon_colors['focus']); ?>;
                 --plugna-color-lightgreen: #00c791;
             }
         </style>
@@ -108,33 +108,24 @@ class Plugna
 
         $plugnaData = get_option('plugna');
 
-        if(empty($plugnaData)){
-            $plugnaData = json_encode((object) [
-                    'settings' =>[],
-                    'filters'  =>[
-                        "toggle" => "toggle-toggle"
-                    ],
-                    'actions'  =>[],
-            ]);
-            update_option('plugna', $plugnaData);
-        }
         ?>
         <script type="text/javascript">
-            var plugna = JSON.parse('<?= $plugnaData ?: '{}'; ?>');
+            var plugna = JSON.parse('<?php echo wp_kses_post($plugnaData) ?: '{}'; ?>');
             plugna.session = {
-                nonce: '<?= wp_create_nonce('wp_rest'); ?>',
-                nonces: <?= json_encode(API::get_routes_nonces()) ?>,
-                path: '<?= plugins_url('/plugna/'); ?>'
+                nonce: '<?php echo esc_attr(wp_create_nonce('wp_rest')); ?>',
+                nonces: <?php echo wp_kses_post(json_encode(PlugnaApi::get_routes_nonces())) ?>,
+                path: '<?php echo esc_url(plugins_url('/',dirname(__FILE__) . '../')) ?>',
+                pathAdmin: '<?php echo esc_url(admin_url()) ?>',
             }
             plugna.translations = {
-                plugin_installed_successfully: '<?php echo __( 'Plugin installed successfully.' ); ?>',
-                plugin_activated: '<?php echo __( 'Plugin activated.' ); ?>',
+                plugin_installed_successfully: '<?php echo wp_kses_post(__( 'Plugin installed successfully.' )); ?>',
+                plugin_activated: '<?php echo wp_kses_post(__( 'Plugin activated.' )); ?>',
             }
         </script>
         <div class="wrap">
             <h1>
                 <span>Plugna</span>
-                <a href="/wp-admin/plugins.php" class="button button-secondary" >
+                <a href="<?php echo esc_url(admin_url('plugins.php')); ?>" class="button button-secondary" >
                     <span class="dashicons dashicons-undo"></span> Switch to WP manager
                 </a>
             </h1>

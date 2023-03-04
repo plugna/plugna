@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * The main wrapper for the plugin data used by Plugna
  *
  */
-class Plugin
+class PlugnaPlugin
 {
     protected $name;
     protected $plugin;
@@ -55,7 +55,7 @@ class Plugin
     }
 
     public static function fromRequest($raw){
-        return new Plugin([
+        return new PlugnaPlugin([
             'plugin' => $raw->plugin,
             'name' => $raw->name
         ]);

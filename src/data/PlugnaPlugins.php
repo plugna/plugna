@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The class responsible for fetching and managing multiple plugins.
  */
-class Plugins
+class PlugnaPlugins
 {
     protected $raw;
     protected $plugins = [];
@@ -30,7 +30,7 @@ class Plugins
 //            }
 
             $rawPlugin['auto-updates-enabled'] = in_array($path, $auto_updates);
-            $this->plugins[] = (new Plugin($rawPlugin))->get();
+            $this->plugins[] = (new PlugnaPlugin($rawPlugin))->get();
         }
     }
 

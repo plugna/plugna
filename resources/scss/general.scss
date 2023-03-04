@@ -10,7 +10,8 @@
 }
 body.toplevel_page_plugna #wpbody-content .notice,
 body.toplevel_page_plugna #wpbody-content .updated,
-body.toplevel_page_plugna #wpbody-content .error{
+body.toplevel_page_plugna #wpbody-content .error,
+body.toplevel_page_plugna #wpbody-content .sbi_notice{
     display: none;
 }
 body.wp-admin.toplevel_page_plugna {
@@ -123,9 +124,10 @@ body.wp-admin.toplevel_page_plugna {
       height: 10px;
     }
   }
+
   .wrap {
      > .notice, > .error, > div:not(.plugna-upload) {
-       display: none;
+       display: none !important;
      }
   }
 
@@ -187,7 +189,7 @@ body.wp-admin.toplevel_page_plugna {
   }
 
   #content-plugna {
-    display: block;
+    display: block !important;
     .button-primary{
       &.red {
         background: var(--plugna-red-dark);

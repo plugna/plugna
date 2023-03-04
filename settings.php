@@ -5,4 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( 'We\'re sorry, but you can not directly access this file.' );
 }
 
-const PLUGNA_DEV = true;
+if( ! defined( 'PLUGNA_DEV' ) ) {
+    define( 'PLUGNA_DEV', true );
+}

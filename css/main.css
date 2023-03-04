@@ -11,7 +11,8 @@
 
 body.toplevel_page_plugna #wpbody-content .notice,
 body.toplevel_page_plugna #wpbody-content .updated,
-body.toplevel_page_plugna #wpbody-content .error {
+body.toplevel_page_plugna #wpbody-content .error,
+body.toplevel_page_plugna #wpbody-content .sbi_notice {
   display: none;
 }
 
@@ -118,7 +119,7 @@ body.wp-admin.toplevel_page_plugna .box-colors .color-box {
   height: 10px;
 }
 body.wp-admin.toplevel_page_plugna .wrap > .notice, body.wp-admin.toplevel_page_plugna .wrap > .error, body.wp-admin.toplevel_page_plugna .wrap > div:not(.plugna-upload) {
-  display: none;
+  display: none !important;
 }
 body.wp-admin.toplevel_page_plugna #wpcontent, body.wp-admin.toplevel_page_plugna #wpwrap {
   background: #fff;
@@ -176,7 +177,7 @@ body.wp-admin.toplevel_page_plugna h1 {
   display: inline-block;
 }
 body.wp-admin.toplevel_page_plugna #content-plugna {
-  display: block;
+  display: block !important;
 }
 body.wp-admin.toplevel_page_plugna #content-plugna .button-primary.red {
   background: var(--plugna-red-dark);

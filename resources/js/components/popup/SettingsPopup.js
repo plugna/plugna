@@ -34,7 +34,7 @@ function SettingsPopup(props) {
                                             Client.deactivatePlugin({plugin: 'plugna/plugin.php'})
                                                 .then((response) => {
                                                     if(response.success) {
-                                                        window.location.href = '/wp-admin/plugins.php';
+                                                        window.location.href = plugna.session.pathAdmin + 'plugins.php';
                                                     }
                                                 })
                                                 .catch(e => {

@@ -2269,7 +2269,7 @@ function NewPlugin() {
                           secondary: true,
                           wired: true,
                           classes: "thickbox open-plugin-details-modal more-info",
-                          link: "/wp-admin/plugin-install.php?tab=plugin-information&plugin=" + plugin.slug + "&TB_iframe=true&width=600&height=550",
+                          link: plugna.session.pathAdmin + "plugin-install.php?tab=plugin-information&plugin=" + plugin.slug + "&TB_iframe=true&width=600&height=550",
                           children: "More Info"
                         }), plugin.installed && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
                           className: "done",
@@ -2563,7 +2563,7 @@ function SettingsPopup(props) {
                       plugin: 'plugna/plugin.php'
                     }).then(function (response) {
                       if (response.success) {
-                        window.location.href = '/wp-admin/plugins.php';
+                        window.location.href = plugna.session.pathAdmin + 'plugins.php';
                       }
                     })["catch"](function (e) {
                       console.log(e);

@@ -379,7 +379,7 @@ function NewPlugin() {
                                                     <CButton secondary
                                                              wired
                                                              classes={"thickbox open-plugin-details-modal more-info"}
-                                                    link={"/wp-admin/plugin-install.php?tab=plugin-information&plugin="+plugin.slug+"&TB_iframe=true&width=600&height=550"}
+                                                    link={plugna.session.pathAdmin + "plugin-install.php?tab=plugin-information&plugin="+plugin.slug+"&TB_iframe=true&width=600&height=550"}
                                                     >More Info</CButton>
                                                     {plugin.installed && <p className={"done"}>DONE!</p>}
                                                     {!plugin.installed && <CButton onClick={(e)=>{
