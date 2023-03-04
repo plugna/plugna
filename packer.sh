@@ -9,6 +9,7 @@ rsync -av \
 --exclude=.gitignore \
 --exclude=export \
 --exclude=.git \
+--exclude=.idea \
 --exclude=main.js \
 --exclude=yarn.lock \
 --exclude=yarn-error.log \

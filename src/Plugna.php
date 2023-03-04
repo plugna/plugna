@@ -108,6 +108,11 @@ class Plugna
 
         $plugnaData = get_option('plugna');
 
+        //Save the default value if it's empty
+        if(empty($plugnaData)){
+            update_option('plugna', '{}');
+        }
+
         ?>
         <script type="text/javascript">
             var plugna = JSON.parse('<?php echo wp_kses_post($plugnaData) ?: '{}'; ?>');
