@@ -30,11 +30,7 @@ function ActionsBar(props) {
                             name={"Update"}
                             title={"Update all selected plugins"}
                         />
-                        <ActionItem
-                            slug={"au"}
-                            name={"Auto Updates"}
-                            title={"Toggle auto updates for selected plugins"}
-                        />
+
                 </ul>
 
                 <ul className={"right"}>

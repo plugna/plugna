@@ -68,8 +68,7 @@ var Client = {
   forceDeletePlugin: function forceDeletePlugin(item) {
     return Client._post('force_delete_plugin', item);
   },
-  toggleAutoUpdatesOnPlugin: function toggleAutoUpdatesOnPlugin(item) {
-    return Client._post('toggle_auto_updates', item);
+  toggleAutoUpdatesOnPlugin: function toggleAutoUpdatesOnPlugin(item) {//return Client._post('toggle_auto_updates', item);
   },
   toggleAutoUpdatesOnPlugins: function toggleAutoUpdatesOnPlugins(item) {
     return Client._post('toggle_auto_updates_multiple', item);
@@ -945,10 +944,6 @@ function ActionsBar(props) {
           slug: "update",
           name: "Update",
           title: "Update all selected plugins"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ActionItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          slug: "au",
-          name: "Auto Updates",
-          title: "Toggle auto updates for selected plugins"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
         className: "right",

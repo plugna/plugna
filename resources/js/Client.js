@@ -55,7 +55,7 @@ const Client = {
         return Client._post('force_delete_plugin', item);
     },
     toggleAutoUpdatesOnPlugin: (item) => {
-        return Client._post('toggle_auto_updates', item);
+        //return Client._post('toggle_auto_updates', item);
     },
     toggleAutoUpdatesOnPlugins: (item) => {
         return Client._post('toggle_auto_updates_multiple', item);

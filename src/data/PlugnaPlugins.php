@@ -15,8 +15,6 @@ class PlugnaPlugins
 
     public function __construct($rawPlugins)
     {
-        $auto_updates = (array) get_site_option( 'auto_update_plugins', array() );
-
         foreach ((array)$rawPlugins as $path => $rawPlugin) {
             if($path === 'plugna/plugin.php'){
                 continue;
@@ -29,7 +27,6 @@ class PlugnaPlugins
 //                $rawPlugin['slug'] = //add slug here
 //            }
 
-            $rawPlugin['auto-updates-enabled'] = in_array($path, $auto_updates);
             $this->plugins[] = (new PlugnaPlugin($rawPlugin))->get();
         }
     }

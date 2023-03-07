@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=agca@cus
 Tags: plugins, admin, wp-admin, manager, management, plugin manager
 Requires at least: 6.0
 Tested up to: 6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl.txt
@@ -67,4 +67,4 @@ Not yet. Multi-site support is not yet available, but we are working on it.
 
 [SEE ALL LOGS](https://plugins.svn.wordpress.org/plugna/trunk/changelog.txt)
 
-== Change Log === 1.0.1 =* Security and compatibility fixes= 1.0 =* Initial version== Upgrade Notice === 1.0.1 =* Security and compatibility fixes= 1.0 =* Initial version
+== Change Log === 1.0.2 =* Removed non-secure way to check for auto-updates= 1.0.1 =* Security and compatibility fixes= 1.0 =* Initial version== Upgrade Notice === 1.0.2 =* Security fixes= 1.0.1 =* Security and compatibility fixes= 1.0 =* Initial version

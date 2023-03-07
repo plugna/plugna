@@ -135,20 +135,7 @@ class PlugnaPlugin
     }
 
     public function toggle_auto_updates(){
-        $auto_updates = (array) get_site_option( 'auto_update_plugins', array() );
-        $isEnabled = in_array($this->plugin, $auto_updates);
-
-       if($isEnabled){
-           //Now disable auto-updates
-           array_splice($auto_updates, array_search($this->plugin, $auto_updates));
-           update_site_option( 'auto_update_plugins', $auto_updates );
-           $this->isAutoUpdatesEnabled = true;
-        } else {
-           //Now enable auto-updates
-           $auto_updates[] = $this->plugin;
-           update_site_option( 'auto_update_plugins', $auto_updates );
-           $this->isAutoUpdatesEnabled = false;
-        }
+       //TODO: Find a secure way to check for auto-updates
     }
 
     public function update(){
