@@ -51,6 +51,7 @@ class PlugnaApi
         include_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
         include_once plugin_dir_path(__FILE__) . 'data/PlugnaPlugin.php';
         include_once plugin_dir_path(__FILE__) . 'data/PlugnaPlugins.php';
+        include_once plugin_dir_path(__FILE__) . 'data/PlugnaSettings.php';
 
         add_action('rest_api_init', function () {
             $this->get_routes(self::$getRoutes);
@@ -302,9 +303,11 @@ class PlugnaApi
     {
         $this->verifyNonce($request);
         $this->allowIf(self::IS_ADMINISTRATOR);
-        $data = json_decode(get_option('plugna'));
-        $data->settings = json_decode($request->get_body());
-        update_option('plugna', json_encode($data));
+
+        $settings = new PlugnaSettings();
+        $settings->appendJSON($request->get_body());
+        $settings->persist();
+
         $this->response(['success_messages' => get_option('plugna')]);
     }
 

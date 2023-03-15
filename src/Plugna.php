@@ -105,17 +105,11 @@ class Plugna
     public static function admin_page()
     {
         self::colors();
-
-        $plugnaData = get_option('plugna');
-
-        //Save the default value if it's empty
-        if(empty($plugnaData)){
-            update_option('plugna', '{}');
-        }
+        $plugnaSettings = new PlugnaSettings();
 
         ?>
         <script type="text/javascript">
-            var plugna = JSON.parse('<?php echo wp_kses_post($plugnaData) ?: '{}'; ?>');
+            var plugna = JSON.parse('<?php echo wp_kses_post($plugnaSettings->getAll()) ?: '{}'; ?>');
             plugna.session = {
                 nonce: '<?php echo esc_attr(wp_create_nonce('wp_rest')); ?>',
                 nonces: <?php echo wp_kses_post(json_encode(PlugnaApi::get_routes_nonces())) ?>,
@@ -133,6 +127,7 @@ class Plugna
                 <a href="<?php echo esc_url(admin_url('plugins.php')); ?>" class="button button-secondary" >
                     <span class="dashicons dashicons-undo"></span> Switch to WP manager
                 </a>
+                <span class="plugna-version-text">v<?php echo PLUGNA_VERSION ?></span>
             </h1>
             <div id="content-plugna"></div>
             <div class="plugna-upload upload-plugin-wrap">

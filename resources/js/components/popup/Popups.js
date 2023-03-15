@@ -11,7 +11,9 @@ function Popups() {
                 <WelcomePopup
                     key={key}
                     onClose={() => {
-                        setSettings({type: 'hideWelcome'});
+                        if(!plugna.settings || !plugna.settings.hideWelcome) {
+                            setSettings({type: 'hideWelcome'});
+                        }
                     }}
                 />
             )

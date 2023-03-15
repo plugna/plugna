@@ -9,6 +9,14 @@ function TopActions(props) {
     return (
         <>
             <CButton style={{marginLeft: '1px'}}
+                     onClick={()=>{
+                         window.open('https://plugna.com/vip/', '_blank');
+                     }}
+                     title={"Open the settings popup."}
+                     wpPrimary={true}>
+                <span>⭐ Become VIP ⭐</span>
+            </CButton>
+            <CButton style={{marginLeft: '1px'}}
                      onClick={popup.settings}
                      title={"Open the settings popup."}
                      wpPrimary={true}>

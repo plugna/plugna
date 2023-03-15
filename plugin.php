@@ -9,9 +9,10 @@
  * @wordpress-plugin
  * Plugin Name:       Plugna
  * Plugin URI:        https://plugna.com
- * Description:       Organize WordPress plugins like a PRO
- * Version:           1.0.2
+ * Description:       Streamlined and efficient plugin management experience. Plugna saves you time and makes managing your WordPress plugins a breeze.
+ * Version:           1.0.3
  * Author:            Plugna
+ * Donate link:       https://plugna.com/vip/
  * Author URI:        https://plugna.com/
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl.txt

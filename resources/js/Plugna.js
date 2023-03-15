@@ -21,6 +21,7 @@ import hasSelected from "./plugna/helpers/hasSelected";
 import StatsBar from "./components/actions-bar/StatsBar";
 import MasterActions from "./components/actions-bar/MasterActions";
 import hasVisiblePlugins from "./plugna/helpers/hasVisiblePlugins";
+import FeedbackBar from "./components/actions-bar/FeedbackBar";
 
 function Plugna() {
 
@@ -75,6 +76,7 @@ function Plugna() {
                         }/>
                 </div>
                 <NewPlugin />
+                <FeedbackBar />
                 <MasterActions top />
                 <div className={
                     classNames(

@@ -24,6 +24,12 @@ body.wp-admin.toplevel_page_plugna .main-loader {
 body.wp-admin.toplevel_page_plugna .main-loader .loader {
   margin-left: 3px;
 }
+body.wp-admin.toplevel_page_plugna .plugna-version-text {
+  display: block;
+  font-size: 15px;
+  margin-right: 14px;
+  margin-top: 14px;
+}
 body.wp-admin.toplevel_page_plugna .circle-progress {
   display: flex;
   border-radius: 50%;
@@ -555,6 +561,29 @@ body.wp-admin.toplevel_page_plugna #content-plugna .loader {
 #content-plugna .master-actions.top {
   margin-top: 0;
   margin-bottom: 15px;
+}
+#content-plugna .master-actions.feedback {
+  box-shadow: 2px 1px 3px #aaa !important;
+  background: #c1f6c1;
+  margin-bottom: 12px;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#content-plugna .master-actions.feedback span.value {
+  color: #0c7b09;
+}
+#content-plugna .master-actions.feedback .plugna-button.secondary {
+  background: #0a7b0a !important;
+}
+#content-plugna .master-actions.feedback .plugna-button.secondary:hover {
+  background: #085608 !important;
+}
+#content-plugna .master-actions.feedback .plugna-button.secondary.red {
+  background: var(--plugna-red) !important;
+}
+#content-plugna .master-actions.feedback .plugna-button.secondary.red:hover {
+  background: var(--plugna-red-dark) !important;
 }
 #content-plugna .actions {
   display: flex;

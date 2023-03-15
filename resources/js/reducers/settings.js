@@ -7,6 +7,12 @@ export function settingsReducer(state, action) {
         case 'hideWelcome':
             newState =  {...state, ...{hideWelcome: true}};
             break;
+        case 'feedbackDismissed':
+            newState =  {...state, ...{feedbackStatus: 'dismissed'}};
+            break;
+        case 'feedbackProvided':
+            newState =  {...state, ...{feedbackStatus: 'submitted'}};
+            break;
         case 'view':
             newState =  {...state, ...{view: action.payload === 'list' ? 'grid':'list'}};
             break;
